@@ -12,6 +12,7 @@ import NotFound from './views/NotFound';
 import { ProtectedLogin, ProtectedAdmin } from './components/ProtectedRoutes';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import WhatsappButton from './components/WhatsappButton';
 
 export default function App() {
     return (
@@ -37,6 +38,7 @@ export default function App() {
             } />
             <Route path='/*' element={<NotFound />} />
           </Routes>
+          <WhatsappButton />
           <Footer />
         </div>
     );

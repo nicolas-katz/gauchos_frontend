@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 export default function Home() {
     return (
-        <div>
+        <div style={{
+            height: '1000px'
+        }}>
         </div>
     );
 };

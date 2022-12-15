@@ -149,7 +149,7 @@ const StyledHeader = styled.header`
     }
 
     @media only screen and (min-width: 1200px) {
-        padding: 10px 60px;
+        padding: 10px 80px;
     }
 `;
 
@@ -165,7 +165,7 @@ export default function Header() {
     return (
         <StyledHeader>
             <nav>
-                <NavLink to='/'><img src={logo} alt='Gauchos Indumentaria' /></NavLink>
+                <NavLink to='/'><img src={logo} alt='Miltex Indumentaria' /></NavLink>
                 <ul>
                     <NavLink to='/coleccion' onClick={handleCloseMenu}><li>Colección</li></NavLink>
                     <NavLink to='/galeria' onClick={handleCloseMenu}><li>Galería</li></NavLink>
