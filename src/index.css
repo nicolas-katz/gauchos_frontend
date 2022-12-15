@@ -4,3 +4,7 @@
   box-sizing: border-box;
   font-family: 'Outfit', 'DM Sans', 'DM Mono', 'Poppins', 'Domine', 'Arvo', sans-serif, monospace;
 }
+
+:root {
+  --colorPrincipal: #fbb033;
+}
