@@ -17,7 +17,7 @@ const StyledLogin = styled.div`
         color: black;
         font-size: 12px;
         line-height: 22px;
-        font-weight: 600;
+        font-weight: 400;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -36,7 +36,7 @@ const StyledLogin = styled.div`
     form {
         width: 100%;
         height: max-content;
-        margin-top: 40px;
+        margin-top: 60px;
         padding: 32px;
 
         display: flex;
@@ -108,8 +108,13 @@ const StyledLogin = styled.div`
     @media only screen and (min-width: 768px) {
         padding: 160px 100px 100px 100px;
 
+        h1 {
+            font-size: 48px;
+            line-height: 58px;
+        }
+
         form {
-            padding: 40px;
+            padding: 60px;
 
             div {
                 flex-direction: row;
@@ -121,6 +126,10 @@ const StyledLogin = styled.div`
                 }
             }
         }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        padding: 160px 180px 100px 180px;
     }
 `;
 

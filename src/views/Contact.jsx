@@ -311,7 +311,7 @@ export default function Contact() {
                         loading="lazy" 
                         referrerPolicy="no-referrer-when-downgrade">
                     </iframe>
-                    <h4>Lunes a Viernes de 8HS a 18HS. <span>Sabados de 8HS a 13HS.</span></h4>
+                    <h4>Lunes a Viernes de 8hs a 18hs. <span>Sabados de 8hs a 13hs.</span></h4>
                 </div>
             </div>
             <div className='contact__form'>

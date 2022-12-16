@@ -163,24 +163,6 @@ const StyledFooter = styled.footer`
         }
     }
 
-    @media only screen and (min-width: 768px) {
-        div.footer__information {
-            flex-direction: row;
-            justify-content: space-between;
-
-            div.footer__brand,
-            div.footer__links {
-                margin-top: 0;
-
-                margin-right: 20px;
-            }
-
-            div.footer__media {
-                margin-top: 0;
-            }
-        }        
-    }
-
     div.footer__copyright {
         width: 100%;
         height: max-content;
@@ -198,9 +180,9 @@ const StyledFooter = styled.footer`
 
         h6 {
             color: #1F1F1F;
-            font-size: 16px;
-            line-height: 26px;
-            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
 
             a {
                 transition: all .6s;
@@ -212,6 +194,51 @@ const StyledFooter = styled.footer`
                     color: var(--colorPrincipal);
                 }
             }
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        div.footer__information {
+            flex-direction: row;
+            justify-content: space-between;
+
+            div.footer__brand,
+            div.footer__links {
+                margin-top: 0;
+            }
+
+            div.footer__links {
+                margin: 0 10px;
+
+                justify-content: center;
+
+                div {
+                    margin: 0 12px;
+                }
+            }
+
+            div.footer__media {
+                width: max-content;
+                margin-top: 0;
+            }
+        }        
+    }
+
+    @media only screen and (min-width: 1024px) {
+        div.footer__information {
+            div.footer__links {
+                margin: 0 80px;
+
+                div {
+                    margin: 0 40px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        div.footer__information {
+            padding: 40px 80px;
         }
     }
 `;
