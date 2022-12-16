@@ -26,16 +26,8 @@ export default function App() {
             <Route path='/galeria' element={<Gallery />} />
             <Route path='/empresa' element={<About />} />
             <Route path='/contacto' element={<Contact />} />
-            <Route path='/acceso/login' element={
-              <ProtectedLogin>
-                <Login />
-              </ProtectedLogin>
-            } />
-            <Route path='/acceso/administrador' element={
-              <ProtectedAdmin>
-                <Admin />
-              </ProtectedAdmin>
-            } />
+            <Route path='/acceso/login' element={<Login />} />
+            <Route path='/acceso/administrador' element={<Admin />} />
             <Route path='/*' element={<NotFound />} />
           </Routes>
           <WhatsappButton />
