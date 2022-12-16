@@ -4,12 +4,10 @@ import styled from 'styled-components';
 import { BsInstagram, FaFacebookF, AiOutlineMail } from 'react-icons/all';
 import logo from '../assets/logo.png';
 import meli from '../assets/meli.png';
-import datafiscal from '../assets/datafiscal.png';
 
 const StyledFooter = styled.footer`
     width: 100%;
     height: max-content;
-    padding: 20px;
 
     display: flex;
     flex-direction: column;
@@ -18,6 +16,7 @@ const StyledFooter = styled.footer`
 
     div.footer__information {
         width: 100%;
+        padding: 20px;
 
         display: flex;
         flex-direction: column;
@@ -53,14 +52,6 @@ const StyledFooter = styled.footer`
                         color: var(--colorPrincipal);
                     }
                 }
-            }
-
-            a.data__fiscal img {
-                width: 80px;
-                margin-top: 20px;
-                margin-bottom: 0;
-
-                object-fit: contain;
             }
         }
 
@@ -150,8 +141,8 @@ const StyledFooter = styled.footer`
             }
 
             a.meli {
-                width: 240px;
-                height: 72px;
+                width: 160px;
+                height: 56px;
                 margin-top: 20px;
 
                 display: flex;
@@ -233,9 +224,8 @@ export default function Footer() {
                     <NavLink to='/'><img src={logo} alt='Miltex Indumentaria' /></NavLink>
                     <h4>
                         Estamos en
-                        <a href='https://goo.gl/maps/D1D9rFJGrmerEmVg6' target='_blank' rel='noopener noreferrer'>Av. Scalabrini Ortiz 401, Ciudad Autonoma de Buenos Aires.</a>
+                        <a href='https://goo.gl/maps/D1D9rFJGrmerEmVg6' target='_blank' rel='noopener noreferrer'>Av. Scalabrini Ortiz 401, Ciudad Autonoma de Buenos Aires, Argentina.</a>
                     </h4>
-                    <a className='data__fiscal' href='https://serviciosweb.afip.gob.ar/clavefiscal/qr/publicInfoD.aspx' target='_blank' rel='noopener noreferrer'><img src={datafiscal} alt='Data fiscal (AFIP) - Miltex Indumentaria' /></a>
                 </div>
                 <div className='footer__links'>
                     <div>
@@ -251,7 +241,7 @@ export default function Footer() {
                         <NavLink to='/contacto'>Contacto</NavLink>
                     </div>
                     <div>
-                        <h4>Lineas</h4>
+                        <h4>Telefonos</h4>
                         <a href='tel:+5491162715898' target='_blank' rel='noopener noreferrer'>Mayorista</a>
                         <a href='tel:+5491125610827' target='_blank' rel='noopener noreferrer'>Minorista</a>
                         <a href='tel:+541148545800' target='_blank' rel='noopener noreferrer'>Rotativas</a>
@@ -264,7 +254,7 @@ export default function Footer() {
                         <a href='https://www.facebook.com/profile.php?id=100064187136448' target='_blank' rel='noopener noreferrer'><FaFacebookF /></a>
                         <a href='mailto:info@miltex.com.ar' target='_blank' rel='noopener noreferrer'><AiOutlineMail /></a>
                     </div>
-                    <h4>Compra en</h4>
+                    <h4>Compra online</h4>
                     <a className='meli' href='' target='_blank'>
                         <img src={meli} alt='Acceso a Mercado Libre - Miltex Indumentaria' />
                     </a>
