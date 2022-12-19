@@ -138,7 +138,7 @@ const StyledFilters = styled.div`
     }
 `;
 
-export default function FilterProducts({ state }) {
+export default function FilterProducts({ state, state2 }) {
     const { showFilterBar, searchByName } = useContext(ProductsContext);
     const [input, setInput] = useState('');
 
@@ -154,7 +154,10 @@ export default function FilterProducts({ state }) {
         e.preventDefault();
 
         searchByName(input, state);  
+        
         handleClose();
+
+        state2(`Resultado para busqueda: ${input}`);
     };
 
     return (

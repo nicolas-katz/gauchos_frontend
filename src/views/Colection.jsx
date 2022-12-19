@@ -123,9 +123,10 @@ const StyledColection = styled.div`
 `;
 
 export default function Colection() {
+    const { category } = useParams();
     const { getAll, showFilterBar, showFilter } = useContext(ProductsContext);
     const [products, setProducts] = useState(null);
-    const params = useParams();
+    const [title, setTitle] = useState('');
     
     const handleChange = () => {
         showFilterBar(true);
@@ -133,15 +134,16 @@ export default function Colection() {
 
     useEffect(()=> {
         getAll(setProducts);
-    }, [params]);
+        setTitle(category ? category : 'Colección');
+    }, [category]);
 
     return (
         <StyledColection>
-            <h1>Colección</h1>
+            <h1>{title}</h1>
             <div className='colection__filters'>
                 <button className='filter__button' onClick={handleChange}>Filtrar <CiFilter /></button>
                 {
-                    showFilter && <FilterProducts state={setProducts} />
+                    showFilter && <FilterProducts state={setProducts} state2={setTitle} />
                 }
             </div>
             <div className='colection__container'>
