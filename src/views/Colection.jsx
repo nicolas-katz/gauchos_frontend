@@ -133,15 +133,15 @@ export default function Colection() {
 
     useEffect(()=> {
         getAll(setProducts);
-    }, []);
+    }, [params]);
 
     return (
         <StyledColection>
-            <h1>{!params ? 'Colección' : params.coleccion || params.categoria}</h1>
+            <h1>Colección</h1>
             <div className='colection__filters'>
                 <button className='filter__button' onClick={handleChange}>Filtrar <CiFilter /></button>
                 {
-                    showFilter && <FilterProducts />
+                    showFilter && <FilterProducts state={setProducts} />
                 }
             </div>
             <div className='colection__container'>

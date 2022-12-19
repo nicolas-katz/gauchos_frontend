@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
+import { BiSearch } from 'react-icons/bi';
 import { IoMdClose } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
@@ -47,6 +48,71 @@ const StyledFilters = styled.div`
         div {
             margin: 10px 0;
 
+            form {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                span {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    svg {
+                        margin-top: 2px;
+                        margin-right: 10px;
+
+                        color: gainsboro;
+                        font-size: 14px;
+                    }
+
+                    input {
+                        width: 100%;
+                        height: max-content;
+
+                        background-color: transparent;
+                        border: none;
+                        border-radius: 0;
+                        outline: none;
+                        cursor: pointer;
+                        transition: all .6s;
+
+                        color: white;
+                        font-size: 14px;
+                        font-weight: 300;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+
+                        &::placeholder {
+                            color: white;
+                        }
+                    }
+                }
+
+                button {
+                    width: max-content;
+                    height: 42px;
+                    padding: 0 20px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    background-color: var(--colorPrincipal);
+                    border: none;
+                    border-radius: 2px;
+                    outline: none;
+                    cursor: pointer;
+                    transition: all .6s;
+
+                    color: white;
+                    font-size: 14px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+            }
+
             h4 {
                 margin-bottom: 8px;
 
@@ -72,16 +138,24 @@ const StyledFilters = styled.div`
     }
 `;
 
-export default function FilterProducts() {
-    const { showFilterBar } = useContext(ProductsContext);
+export default function FilterProducts({ state }) {
+    const { showFilterBar, searchByName } = useContext(ProductsContext);
+    const [input, setInput] = useState('');
 
     const handleClose = () => {
         showFilterBar(false);
     };
 
-    document.querySelectorAll('.filter__body div a').forEach(( item ) => {
-        item.addEventListener('click', handleClose());
-    });
+    const handleChange = (e) => {
+        setInput(e.target.value);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        searchByName(input, state);  
+        handleClose();
+    };
 
     return (
         <StyledFilters>
@@ -91,23 +165,41 @@ export default function FilterProducts() {
             <div className='filter__body'>
                 <div>
                     <h4>Buscar por nombre</h4>
+                    <form onSubmit={handleSubmit}>
+                        <span>
+                            <BiSearch />
+                            <input 
+                                onChange={handleChange}
+                                type='text' 
+                                name='search' 
+                                id='search' 
+                                minLength='1' 
+                                placeholder='Buscar nombre'
+                                value={input}
+                                required 
+                            />
+                        </span>
+                        <button type='submit'>Buscar</button>
+                    </form>
                 </div>
                 <div>
                     <h4>Buscar por colección</h4>
-                    <NavLink to='/coleccion/verano'>Verano</NavLink>
-                    <NavLink to='/coleccion/invierno'>Invierno</NavLink>
-                    <NavLink to='/coleccion/dama'>Dama</NavLink>
-                    <NavLink to='/coleccion/seguridad'>Trabajo y Seguridad Industrial</NavLink>
+                    <NavLink to='/coleccion' onClick={handleClose}>Todos las colecciones</NavLink>
+                    <NavLink to='/coleccion/verano' onClick={handleClose}>Verano</NavLink>
+                    <NavLink to='/coleccion/invierno' onClick={handleClose}>Invierno</NavLink>
+                    <NavLink to='/coleccion/dama' onClick={handleClose}>Dama</NavLink>
+                    <NavLink to='/coleccion/seguridad' onClick={handleClose}>Trabajo y Seguridad Industrial</NavLink>
                 </div>
                 <div>
                     <h4>Buscar por categoría</h4>
-                    <NavLink to='/coleccion/alpargatas'>Alpargatas</NavLink>
-                    <NavLink to='/coleccion/bermudas'>Bermudas</NavLink>
-                    <NavLink to='/coleccion/bombachas'>Bombachas</NavLink>
-                    <NavLink to='/coleccion/calzado'>Calzado de Trabajo</NavLink>
-                    <NavLink to='/coleccion/camisas'>Camisas</NavLink>
-                    <NavLink to='/coleccion/pantalones'>Pantalones</NavLink>
-                    <NavLink to='/coleccion/cargos'>Pantalones Cargo</NavLink>
+                    <NavLink to='/coleccion' onClick={handleClose}>Todos los productos</NavLink>
+                    <NavLink to='/coleccion/alpargatas' onClick={handleClose}>Alpargatas</NavLink>
+                    <NavLink to='/coleccion/bermudas' onClick={handleClose}>Bermudas</NavLink>
+                    <NavLink to='/coleccion/bombachas' onClick={handleClose}>Bombachas</NavLink>
+                    <NavLink to='/coleccion/calzado' onClick={handleClose}>Calzado de Trabajo</NavLink>
+                    <NavLink to='/coleccion/camisas' onClick={handleClose}>Camisas</NavLink>
+                    <NavLink to='/coleccion/pantalones' onClick={handleClose}>Pantalones</NavLink>
+                    <NavLink to='/coleccion/cargos' onClick={handleClose}>Pantalones Cargo</NavLink>
                 </div>
             </div>
         </StyledFilters>

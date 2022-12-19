@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import foto from '../assets/galeria_ejemplo.jpg';
+import { ProductsContext } from '../context/ProductsContext';
 
 const StyledGallery = styled.div`
     width: 100%;
     height: max-content;
-    padding: 120px 20px 40px 20px;
+    padding: 120px 20px 60px 20px;
 
     display: flex;
     flex-direction: column;
@@ -24,7 +25,7 @@ const StyledGallery = styled.div`
 
     div.gallery__container {
         width: 100%;
-        margin-top: 60px;
+        margin-top: 40px;
 
         display: flex;
         flex-direction: row;
@@ -75,16 +76,29 @@ const StyledGallery = styled.div`
 `;
 
 export default function Gallery() {
+    const { getAll } = useContext(ProductsContext);
+    const [photos, setPhotos] = useState(null);
+
+    useEffect(()=> {
+        getAll(setPhotos);
+    }, []);
+
     return (
         <StyledGallery>
             <h1>Galería de imagenes</h1>
             <div className='gallery__container'>
-                <img src={foto} alt='Galería de imagenes - Miltex Indumentaria' />
-                <img src={foto} alt='Galería de imagenes - Miltex Indumentaria' />
-                <img src={foto} alt='Galería de imagenes - Miltex Indumentaria' />
-                <img src={foto} alt='Galería de imagenes - Miltex Indumentaria' />
-                <img src={foto} alt='Galería de imagenes - Miltex Indumentaria' />
-                <img src={foto} alt='Galería de imagenes - Miltex Indumentaria' />
+                {
+                    photos !== null && 
+                    photos.map(( photo, index ) => {
+                        return(
+                            <img 
+                                key={index}
+                                src={photo.image} 
+                                alt='Galería de imagenes - Miltex Indumentaria' 
+                            />
+                        )
+                    })
+                }
             </div>
         </StyledGallery>
     );
