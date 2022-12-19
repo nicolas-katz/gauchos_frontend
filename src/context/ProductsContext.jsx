@@ -34,10 +34,16 @@ export function ProductsContextProvider(props) {
             });
     };
 
-    const [show, setShow] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
 
     const showSearchBar = (value) => {
-        setShow(value);
+        setShowSearch(value);
+    };
+
+    const [showFilter, setShowFilter] = useState(false);
+
+    const showFilterBar = (value) => {
+        setShowFilter(value);
     };
 
     return (
@@ -47,7 +53,9 @@ export function ProductsContextProvider(props) {
                 getById,
                 searchByName,
                 showSearchBar,
-                show
+                showSearch,
+                showFilterBar,
+                showFilter
             }}>
             {props.children}
         </ProductsContext.Provider>

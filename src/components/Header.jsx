@@ -164,7 +164,7 @@ export default function Header() {
         document.querySelector('header').classList.remove('menu__active');
     };
 
-    const { showSearchBar, show } = useContext(ProductsContext);
+    const { showSearchBar, showSearch } = useContext(ProductsContext);
 
     const handleChange = () => {
         showSearchBar(true);
@@ -185,7 +185,7 @@ export default function Header() {
             </nav>
             <BiSearch onClick={handleChange} className='search__icon' />
             {
-                show && <SearchBar />
+                showSearch && <SearchBar />
             }
         </StyledHeader>
     );

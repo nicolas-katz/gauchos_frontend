@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import { ProductsContext } from '../context/ProductsContext';
 import styled from 'styled-components';
 import { NavLink, useParams } from 'react-router-dom';
+import { CiFilter } from 'react-icons/all';
+import FilterProducts from '../components/FilterProducts';
 
 const StyledColection = styled.div`
     width: 100%;
@@ -10,8 +12,6 @@ const StyledColection = styled.div`
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     background-color: white;
 
@@ -20,10 +20,47 @@ const StyledColection = styled.div`
         font-size: 36px;
         line-height: 46px;
         font-weight: 400;
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    div.colection__filters {
+        margin-top: 40px;
+
+        button.filter__button {
+            width: 100%;
+            height: 54px;
+            padding: 0 28px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            background-color: var(--colorPrincipal);
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            transition: all .6s;
+
+            color: white;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            svg {
+                margin-left: 14px;
+
+                color: white;
+                font-size: 16px;
+            }
+        }
     }
 
     div.colection__container {
-        margin-top: 40px;
+        margin-top: 20px;
 
         display: flex;
         flex-direction: row;
@@ -86,9 +123,13 @@ const StyledColection = styled.div`
 `;
 
 export default function Colection() {
-    const { getAll } = useContext(ProductsContext);
+    const { getAll, showFilterBar, showFilter } = useContext(ProductsContext);
     const [products, setProducts] = useState(null);
-    const { categoria } = useParams();
+    const params = useParams();
+    
+    const handleChange = () => {
+        showFilterBar(true);
+    };
 
     useEffect(()=> {
         getAll(setProducts);
@@ -96,7 +137,13 @@ export default function Colection() {
 
     return (
         <StyledColection>
-            <h1>{!categoria ? 'Colección' : categoria}</h1>
+            <h1>{!params ? 'Colección' : params.coleccion || params.categoria}</h1>
+            <div className='colection__filters'>
+                <button className='filter__button' onClick={handleChange}>Filtrar <CiFilter /></button>
+                {
+                    showFilter && <FilterProducts />
+                }
+            </div>
             <div className='colection__container'>
                 {
                     products !== null &&
