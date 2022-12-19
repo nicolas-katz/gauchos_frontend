@@ -24,7 +24,7 @@ const StyledGallery = styled.div`
 
     div.gallery__container {
         width: 100%;
-        margin-top: 40px;
+        margin-top: 60px;
 
         display: flex;
         flex-direction: row;
@@ -70,7 +70,7 @@ const StyledGallery = styled.div`
     }
 
     @media only screen and (min-width: 1200px) {
-        padding: 140px 80px 40px 80px;
+        padding: 160px 120px 80px 120px;
     }   
 `;
 

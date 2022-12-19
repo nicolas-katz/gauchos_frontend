@@ -277,7 +277,7 @@ const StyledContact = styled.div`
         }
 
         div.contact__form {
-            padding: 0 200px;
+            padding: 0 160px;
 
             h3 {
                 font-size: 48px;
@@ -287,7 +287,7 @@ const StyledContact = styled.div`
     }
 
     @media only screen and (min-width: 1200px) {
-        padding: 160px 80px 100px 80px;
+        padding: 160px 120px 100px 120px;
     }
 `;
 

@@ -14,10 +14,10 @@ const StyledLogin = styled.div`
     background-color: white;
 
     h6 {
-        color: black;
+        color: var(--colorPrincipal);
         font-size: 12px;
         line-height: 22px;
-        font-weight: 400;
+        font-weight: 500;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -68,6 +68,12 @@ const StyledLogin = styled.div`
             color: black;
             font-size: 16px;
             font-weight: 400;
+        }
+
+        input::placeholder {
+            color: gray;
+            font-size: 16px;
+            font-weight: 300;
         }
 
         div {
@@ -129,7 +135,11 @@ const StyledLogin = styled.div`
     }
 
     @media only screen and (min-width: 1024px) {
-        padding: 160px 180px 100px 180px;
+        padding: 160px 120px 100px 120px;
+
+        form {
+            width: 60%;
+        }
     }
 `;
 
@@ -140,9 +150,9 @@ export default function Login() {
             <h1>Acceso de administrador</h1>
             <form>
                 <label htmlFor='email'>Tu email</label>
-                <input type='email' name='email' id='email' minLength='4' maxLength='40' required />
+                <input type='email' name='email' id='email' minLength='4' maxLength='40' placeholder='Tu email' required />
                 <label htmlFor='password'>Tu contraseña</label>
-                <input type='password' name='password' id='password' minLength='4' maxLength='40' required />
+                <input type='password' name='password' id='password' minLength='4' maxLength='40' placeholder='Tu contraseña' required />
                 <div>
                     <button type='submit'>Iniciar sesión</button>
                     <h5>¿Has olvidado tu contraseña?</h5>

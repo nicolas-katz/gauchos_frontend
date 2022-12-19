@@ -11,7 +11,7 @@ const StyledChat = styled.a`
     z-index: 2;
 
     @media only screen and (min-width: 1200px) {
-      right: 80px;
+      right: 120px;
     }
 
     width: 48px;

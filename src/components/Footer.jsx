@@ -17,6 +17,7 @@ const StyledFooter = styled.footer`
     div.footer__information {
         width: 100%;
         padding: 20px;
+        padding-bottom: 0;
 
         display: flex;
         flex-direction: column;
@@ -194,6 +195,10 @@ const StyledFooter = styled.footer`
                     color: var(--colorPrincipal);
                 }
             }
+
+            span {
+                display: block;
+            }
         }
     }
 
@@ -221,13 +226,25 @@ const StyledFooter = styled.footer`
                 width: max-content;
                 margin-top: 0;
             }
-        }        
+        }     
+        
+        div.footer__copyright {
+            h6 {
+                span {
+                    display: inline;
+                }
+            }
+        }
     }
 
     @media only screen and (min-width: 1024px) {
         div.footer__information {
+            div.footer__brand {
+                min-width: 240px;
+            }
+
             div.footer__links {
-                margin: 0 80px;
+                margin: 0 20px;
 
                 div {
                     margin: 0 40px;
@@ -238,7 +255,8 @@ const StyledFooter = styled.footer`
 
     @media only screen and (min-width: 1200px) {
         div.footer__information {
-            padding: 40px 80px;
+            padding: 40px 120px;
+            padding-bottom: 0;
         }
     }
 `;
@@ -282,13 +300,13 @@ export default function Footer() {
                         <a href='mailto:info@miltex.com.ar' target='_blank' rel='noopener noreferrer'><AiOutlineMail /></a>
                     </div>
                     <h4>Compra online</h4>
-                    <a className='meli' href='' target='_blank'>
+                    <a className='meli' href='https://listado.mercadolibre.com.ar/_CustId_220794390' target='_blank' rel='noopener noreferrer'>
                         <img src={meli} alt='Acceso a Mercado Libre - Miltex Indumentaria' />
                     </a>
                 </div>
             </div>
             <div className='footer__copyright'>
-                <h6>Copyright © 2023 MILTEX S.A. | Desarrollado por <a href='https://www.linkedin.com/in/nicokatz/' target='_blank' rel='noopener noreferrer'>Nicolas Katz</a></h6>
+                <h6>Copyright © 2023 MILTEX S.A. | <span>Desarrollado por <a href='https://www.linkedin.com/in/nicokatz/' target='_blank' rel='noopener noreferrer'>Nicolas Katz</a></span></h6>
             </div>
         </StyledFooter>
     );

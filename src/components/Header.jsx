@@ -137,7 +137,7 @@ const StyledHeader = styled.header`
                 background-color: transparent;
 
                 a {
-                    margin: 0 20px;
+                    margin: 0 28px;
                 }
             }
         }
@@ -149,7 +149,7 @@ const StyledHeader = styled.header`
     }
 
     @media only screen and (min-width: 1200px) {
-        padding: 10px 80px;
+        padding: 10px 120px;
     }
 `;
 
