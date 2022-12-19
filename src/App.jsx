@@ -21,8 +21,8 @@ export default function App() {
           <Routes>
             <Route exact path='/' element={<Home />} />
             <Route path='/coleccion' element={<Colection />} />
-            <Route path='/coleccion/:category' element={<Colection />} />
-            <Route path='/coleccion/:id' element={<Product />} />
+            <Route path='/coleccion/:categoria' element={<Colection />} />
+            <Route path='/coleccion/producto/:id' element={<Product />} />
             <Route path='/galeria' element={<Gallery />} />
             <Route path='/empresa' element={<About />} />
             <Route path='/contacto' element={<Contact />} />
