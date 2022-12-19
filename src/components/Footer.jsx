@@ -276,8 +276,8 @@ export default function Footer() {
                     <div>
                         <h4>Productos</h4>
                         <NavLink to='/coleccion'>Colección</NavLink>
-                        <NavLink to='/coleccion/verano'>Verano</NavLink>
-                        <NavLink to='/coleccion/invierno'>Invierno</NavLink>
+                        <a href='/' target='_blank' rel='noopener noreferrer'>Descargar catalogo</a>
+                        <NavLink to='/contacto'>Realizar pedido</NavLink>
                     </div>
                     <div>
                         <h4>Nosotros</h4>

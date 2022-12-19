@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { ProductsContext } from '../context/ProductsContext';
 import styled from 'styled-components';
 import { MdOutlineClose, BiSearch } from 'react-icons/all';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const StyledSearchBar = styled.form`
     position: absolute;
@@ -12,6 +12,7 @@ const StyledSearchBar = styled.form`
 
     width: 100%;
     height: max-content;
+    max-height: 100vh;
     padding: 20px;
 
     display: flex;
@@ -20,7 +21,7 @@ const StyledSearchBar = styled.form`
     background-color: white;
     border-radius: 2px;
 
-    overflow-y: auto;
+    overflow-y: scroll;
 
     div.searchbar__container {
         display: flex;
@@ -150,11 +151,10 @@ const StyledSearchBar = styled.form`
     }
 `;
 
-export default function SearchBar({ setSearchBar }) {
+export default function SearchBar() {
     const { searchByName, showSearchBar } = useContext(ProductsContext);
     const [input, setInput] = useState('');
     const [products, setProducts] = useState(null);
-    const nav = useNavigate();
 
     const handleChange = (e) => {
         setInput(e.target.value);
@@ -182,7 +182,7 @@ export default function SearchBar({ setSearchBar }) {
                     <BiSearch />
                     <input 
                         onChange={handleChange}
-                        type='search' 
+                        type='text' 
                         name='search' 
                         id='search' 
                         minLength='1' 

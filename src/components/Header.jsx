@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { ProductsContext } from '../context/ProductsContext';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { HiMenu, MdOutlineClose, BiSearch } from 'react-icons/all';
 import logo from '../assets/logo.png';
-import SearchBar from './SearchBar';
+import SearchBar  from './SearchBar';
 
 const StyledHeader = styled.header`
     position: fixed;
