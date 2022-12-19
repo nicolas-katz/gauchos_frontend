@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { ProductsContext } from '../context/ProductsContext';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { HiMenu, MdOutlineClose, BiSearch } from 'react-icons/all';
 import logo from '../assets/logo.png';
+import SearchBar from './SearchBar';
 
 const StyledHeader = styled.header`
     position: fixed;
@@ -161,7 +163,13 @@ export default function Header() {
     const handleCloseMenu = () => {
         document.querySelector('header').classList.remove('menu__active');
     };
-    
+
+    const { showSearchBar, show } = useContext(ProductsContext);
+
+    const handleChange = () => {
+        showSearchBar(true);
+    };
+
     return (
         <StyledHeader>
             <nav>
@@ -175,7 +183,10 @@ export default function Header() {
                 <HiMenu onClick={handleOpenMenu} className='open__menu' />
                 <MdOutlineClose onClick={handleCloseMenu} className='close__menu' />
             </nav>
-            <BiSearch className='search__icon' />
+            <BiSearch onClick={handleChange} className='search__icon' />
+            {
+                show && <SearchBar />
+            }
         </StyledHeader>
     );
 };

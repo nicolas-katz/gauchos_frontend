@@ -13,6 +13,7 @@ import { ProtectedLogin, ProtectedAdmin } from './components/ProtectedRoutes';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsappButton from './components/WhatsappButton';
+import SearchBar from './components/SearchBar';
 
 export default function App() {
     return (

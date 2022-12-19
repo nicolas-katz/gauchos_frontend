@@ -164,7 +164,7 @@ export default function Product() {
 
     useEffect(() => {
         getById(id, setProduct);
-    }, []);
+    }, [id]);
 
     return (
         <StyledProduct>
