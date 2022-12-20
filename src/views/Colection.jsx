@@ -24,6 +24,17 @@ const StyledColection = styled.div`
         text-transform: capitalize;
     }
 
+    label {
+        margin-top: 10px;
+
+        color: gray;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
     div.colection__filters {
         margin-top: 40px;
 
@@ -146,6 +157,7 @@ export default function Colection() {
                     showFilter && <FilterProducts state={setProducts} state2={setTitle} />
                 }
             </div>
+            <label>Productos encontrados: {products?.length}</label>
             <div className='colection__container'>
                 {
                     products !== null &&

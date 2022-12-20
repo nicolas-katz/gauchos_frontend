@@ -9,7 +9,7 @@ const StyledMain = styled.div`
     position: relative;
 
     width: 100%;
-    height: 700px;
+    height: 640px;
 
     display: flex;
     flex-direction: column;
@@ -31,6 +31,7 @@ const StyledMain = styled.div`
     & a {
         width: max-content;
         height: 54px;
+        margin-top: 60px;
         padding: 0 28px;
 
         display: flex;
@@ -57,7 +58,7 @@ const StyledMain = styled.div`
 const StyledInformation = styled.div`
     width: 100%;
     height: max-content;
-    padding: 60px 20px 0 20px;
+    padding: 0 20px 60px 20px;
 
     display: flex;
     flex-direction: column;
@@ -74,40 +75,64 @@ const StyledInformation = styled.div`
     }
 
     p {
-        margin: 10px 0 20px 0;
+        margin: 20px 0;
 
         color: black;
         font-size: 18px;
         line-height: 28px;
-        font-weight: 300;
+        font-weight: 400;
+
+        span {
+            color: var(--colorPrincipal);
+        }
     }
 
-    div span {
-        margin: 20px 0;
-    }
-
-    div, div span {
+    div {
+        margin-top: 20px;
+        
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
 
-        text-align: center;
+        span {
+            margin-bottom: 24px;
 
-        svg {
-            color: var(--colorPrincipal);
-            font-size: 36px;
-        }
+            &:last-child {
+                margin-bottom: 0;
+            }
 
-        h5 {
-            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
-            color: black;
-            font-size: 14px;
-            line-height: 24px;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            svg {
+                margin-bottom: 12px;
+
+                color: var(--colorPrincipal);
+                font-size: 42px;
+            }
+
+            h5 {
+                color: black;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 500;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            p {
+                margin: 0;
+                margin-top: 10px;
+
+                color: gray;
+                font-size: 18px;
+                line-height: 28px;
+                font-weight: 300;
+            }
         }
     }
 `;
@@ -291,24 +316,6 @@ export default function Home() {
                 <img src={main} alt='Miltex Indumentaria' />
                 <NavLink to='/coleccion'>Comprar ahora</NavLink>
            </StyledMain> 
-           <StyledInformation>   
-                <h2>Confianza y Calidad</h2> 
-                <p>Somos Fabricantes Directos de Indumentaria Gaucho.</p>    
-                <div>
-                    <span>
-                        <BsBuilding />
-                        <h5>Somos fabricantes</h5>
-                    </span>
-                    <span>
-                        <BsCart />
-                        <h5>Venta por mayor y menor</h5>
-                    </span>
-                    <span>
-                        <BsTruck />
-                        <h5>Envíos a todo el país</h5>
-                    </span>
-                </div>
-           </StyledInformation>
            <StyledColletions>
                 <h2>Colecciones populares</h2>
                 <div className='colection__container'>
@@ -362,6 +369,27 @@ export default function Home() {
                 </div>
                 <NavLink className='all__products' to='/coleccion'>Ver todos</NavLink>
            </StyledProducts>
+           <StyledInformation>   
+                <h2>Confianza y Calidad</h2> 
+                <p>Con una amplia trayectoria, en <span>Miltex Indumentaria</span> ofrecemos un servicio de confianza y brindamos siempre producto de alta calidad.</p>    
+                <div>
+                    <span>
+                        <BsBuilding />
+                        <h5>Somos fabricantes</h5>
+                        <p>Somos fabricantes directos de Indumentaria Gaucho.</p>    
+                    </span>
+                    <span>  
+                        <BsCart />                   
+                        <h5>Venta por mayor y menor</h5>
+                        <p>Consulta por nuestro catalogo mayorista y minorista.</p>
+                    </span>
+                    <span>  
+                        <BsTruck />                    
+                        <h5>Envíos a todo el país</h5>
+                        <p>Ofrecemos servicio de envio de producto para todo el país.</p>
+                    </span>
+                </div>
+           </StyledInformation>
         </div>
     );
 };
