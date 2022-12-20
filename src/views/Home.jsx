@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import main from '../assets/main_ejemplo.jpg';
 import { ProductsContext } from '../context/ProductsContext';
+import { BsBuilding, BsCart, BsTruck } from 'react-icons/all';
 
 const StyledMain = styled.div`
     position: relative;
@@ -50,6 +51,64 @@ const StyledMain = styled.div`
         text-transform: uppercase;
         text-decoration: none;
         letter-spacing: 2px;
+    }
+`;
+
+const StyledInformation = styled.div`
+    width: 100%;
+    height: max-content;
+    padding: 60px 20px 0 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    h2 {
+        color: black;
+        font-size: 36px;
+        line-height: 46px;
+        font-weight: 400;
+    }
+
+    p {
+        margin: 10px 0 20px 0;
+
+        color: black;
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 300;
+    }
+
+    div span {
+        margin: 20px 0;
+    }
+
+    div, div span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        svg {
+            color: var(--colorPrincipal);
+            font-size: 36px;
+        }
+
+        h5 {
+            margin-top: 14px;
+
+            color: black;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
     }
 `;
 
@@ -218,9 +277,6 @@ const StyledProducts = styled.div`
     }
 `;
 
-const StyledInformation = styled.div`
-`;
-
 export default function Home() {
     const { getHomeProducts } = useContext(ProductsContext);
     const [products, setProducts] = useState(null);
@@ -235,6 +291,24 @@ export default function Home() {
                 <img src={main} alt='Miltex Indumentaria' />
                 <NavLink to='/coleccion'>Comprar ahora</NavLink>
            </StyledMain> 
+           <StyledInformation>   
+                <h2>Confianza y Calidad</h2> 
+                <p>Somos Fabricantes Directos de Indumentaria Gaucho.</p>    
+                <div>
+                    <span>
+                        <BsBuilding />
+                        <h5>Somos fabricantes</h5>
+                    </span>
+                    <span>
+                        <BsCart />
+                        <h5>Venta por mayor y menor</h5>
+                    </span>
+                    <span>
+                        <BsTruck />
+                        <h5>Envíos a todo el país</h5>
+                    </span>
+                </div>
+           </StyledInformation>
            <StyledColletions>
                 <h2>Colecciones populares</h2>
                 <div className='colection__container'>
@@ -288,9 +362,6 @@ export default function Home() {
                 </div>
                 <NavLink className='all__products' to='/coleccion'>Ver todos</NavLink>
            </StyledProducts>
-           <StyledInformation>
-                    
-           </StyledInformation>
         </div>
     );
 };
