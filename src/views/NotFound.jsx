@@ -12,7 +12,7 @@ const StyledNotFound = styled.div`
     align-items: center;
     justify-content: center;
 
-    background-color: ghostwhite;
+    background-color: white;
 
     text-align: center;
 

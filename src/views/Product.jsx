@@ -15,7 +15,7 @@ const StyledProduct = styled.div`
     display: flex;
     flex-direction: column;
 
-    background-color: ghostwhite;
+    background-color: white;
 
     div.product__container {
         width: 100%;

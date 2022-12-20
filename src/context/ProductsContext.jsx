@@ -14,6 +14,20 @@ export function ProductsContextProvider(props) {
             });
     };
 
+    const getHomeProducts = async (state) => {
+        axios.get('https://rickandmortyapi.com/api/character')
+            .then(( res ) => {
+                state(res.data.results.filter(( product, index ) =>  { 
+                    if(index < 8) {
+                        return product;
+                    }; 
+                }));
+            })
+            .catch(( error ) => {
+                console.error(error);
+            });
+    };
+
     const getById = async (id, state) => {
         axios.get(`https://rickandmortyapi.com/api/character/${id}`)
             .then(( res ) => {
@@ -50,6 +64,7 @@ export function ProductsContextProvider(props) {
         <ProductsContext.Provider 
             value={{
                 getAll,
+                getHomeProducts,
                 getById,
                 searchByName,
                 showSearchBar,
