@@ -155,9 +155,9 @@ Error generating stack: `+i.message+`
         margin: 20px 0;
 
         color: black;
-        font-size: 18px;
-        line-height: 28px;
-        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 300;
 
         span {
             color: var(--colorPrincipal);
