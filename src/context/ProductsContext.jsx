@@ -48,6 +48,43 @@ export function ProductsContextProvider(props) {
             });
     };
 
+    const searchByCategory = async (cat, state) => {
+        axios.get(`https://rickandmortyapi.com/api/character`)
+            .then(( res ) => {
+                state(res.data.results.filter(( product ) => product.category.toUpperCase() === cat.toUpperCase()));
+            })
+            .catch(( error ) => {
+                console.error(error);
+            });
+    };
+
+    const searchByColection = async (col, state) => {
+        axios.get(`https://rickandmortyapi.com/api/character`)
+            .then(( res ) => {
+                state(res.data.results.filter(( product ) => product.colection.toUpperCase() === col.toUpperCase()));
+            })
+            .catch(( error ) => {
+                console.error(error);
+            });
+    };
+
+    const sortArrayByAZ = (x, y) => {
+        if (x.name < y.name) return -1;
+        if (x.name > y.name) return 1;
+        return 0;  
+    };
+
+    const sortArrayByZA = (x, y) => {
+        if (x.name < y.name) return 1;
+        if (x.name > y.name) return -1;
+        return 0;  
+    };
+
+    const sortProducts = (state, sorter) => {
+        if(sorter === 1) state.sort(sortArrayByAZ);
+        if(sorter === -1) state.sort(sortArrayByZA);
+    };
+
     const [showSearch, setShowSearch] = useState(false);
 
     const showSearchBar = (value) => {
@@ -67,6 +104,9 @@ export function ProductsContextProvider(props) {
                 getHomeProducts,
                 getById,
                 searchByName,
+                searchByCategory,
+                searchByColection,
+                sortProducts,
                 showSearchBar,
                 showSearch,
                 showFilterBar,

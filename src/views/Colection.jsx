@@ -154,7 +154,7 @@ export default function Colection() {
             <div className='colection__filters'>
                 <button className='filter__button' onClick={handleChange}>Filtrar <CiFilter /></button>
                 {
-                    showFilter && <FilterProducts state={setProducts} state2={setTitle} />
+                    showFilter && <FilterProducts state={setProducts} state2={setTitle} products={products} />
                 }
             </div>
             <label>Productos encontrados: {products?.length}</label>

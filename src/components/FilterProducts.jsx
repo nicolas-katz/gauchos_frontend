@@ -134,12 +134,40 @@ const StyledFilters = styled.div`
                 font-weight: 300;
                 text-decoration: none;
             }
+
+            &:last-child {
+                display: flex;
+                flex-direction: column;
+
+                button {
+                    width: max-content;
+                    height: max-content;
+                    margin-bottom: 6px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    background-color: transparent;
+                    border: none;
+                    border-radius: 0;
+                    outline: none;
+                    cursor: pointer;
+                    transition: all .6s;
+
+                    color: white;
+                    font-size: 16px;
+                    line-height: 26px;
+                    font-weight: 300;
+                    text-align: left;
+                }
+            }
         }
     }
 `;
 
-export default function FilterProducts({ state, state2 }) {
-    const { showFilterBar, searchByName } = useContext(ProductsContext);
+export default function FilterProducts({ state, state2, products }) {
+    const { showFilterBar, searchByName, searchByCategory, searchByColection, sortProducts } = useContext(ProductsContext);
     const [input, setInput] = useState('');
 
     const handleClose = () => {
@@ -158,6 +186,12 @@ export default function FilterProducts({ state, state2 }) {
         handleClose();
 
         state2(`Resultado para busqueda: ${input}`);
+    };
+
+    const handleSort = (sorter) => {
+        sortProducts(products, sorter);
+
+        handleClose();
     };
 
     return (
@@ -203,6 +237,11 @@ export default function FilterProducts({ state, state2 }) {
                     <NavLink to='/coleccion/camisas' onClick={handleClose}>Camisas</NavLink>
                     <NavLink to='/coleccion/pantalones' onClick={handleClose}>Pantalones</NavLink>
                     <NavLink to='/coleccion/cargos' onClick={handleClose}>Pantalones Cargo</NavLink>
+                </div>
+                <div>
+                    <h4>Ordenar por</h4>
+                    <button onClick={() => handleSort(1)}>Aa - Zz</button>
+                    <button onClick={() => handleSort(-1)}>Zz - Aa</button>
                 </div>
             </div>
         </StyledFilters>
