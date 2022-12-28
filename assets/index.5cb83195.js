@@ -151,7 +151,7 @@ Error generating stack: `+o.message+`
         justify-content: center;
 
         span {
-            margin-bottom: 24px;
+            margin-bottom: 32px;
 
             &:last-child {
                 margin-bottom: 0;
@@ -184,8 +184,8 @@ Error generating stack: `+o.message+`
                 margin-top: 10px;
 
                 color: gray;
-                font-size: 18px;
-                line-height: 28px;
+                font-size: 20px;
+                line-height: 30px;
                 font-weight: 300;
             }
         }
@@ -865,7 +865,7 @@ Error generating stack: `+o.message+`
             }
         }
     }
-`;function pv(){const{getById:e}=O.exports.useContext(hn),{id:t}=xp(),[n,r]=O.exports.useState(null);return O.exports.useEffect(()=>{e(t,r)},[t]),p(fv,{children:n!==null&&C("div",{className:"product__container",children:[p("div",{className:"product__images",children:p("img",{src:n.image})}),C("div",{className:"product__information",children:[C("span",{children:[p(H,{to:"/",children:"Inicio"}),"/",p(H,{to:"/coleccion",children:"Colecci\xF3n"}),"/",p("p",{children:n.name})]}),p("h3",{children:n.name}),C("div",{className:"product__buttons",children:[C("a",{href:`https://web.whatsapp.com/send?phone=5491168760961&text=Hola! Quiero m\xE1s informaci\xF3n acerca del producto ${n.name}. Gracias!`,target:"_blank",rel:"noopener noreferrer",children:["Consultar stock ",p(rh,{})]}),C(H,{to:"/contacto",children:["Realizar pedido ",p(nh,{})]})]})]})]})})}const hv=Te.div`
+`;function pv(){const{getById:e}=O.exports.useContext(hn),{id:t}=xp(),[n,r]=O.exports.useState(null);return O.exports.useEffect(()=>{e(t,r)},[t]),p(fv,{children:n!==null&&C("div",{className:"product__container",children:[p("div",{className:"product__images",children:p("img",{src:n.image})}),C("div",{className:"product__information",children:[C("span",{children:[p(H,{to:"/",children:"Inicio"}),"/",p(H,{to:"/coleccion",children:"Colecci\xF3n"}),"/",p("p",{children:n.name})]}),p("h3",{children:n.name}),C("div",{className:"product__buttons",children:[C("a",{href:`https://web.whatsapp.com/send?phone=5491168760961&text=Hola! Quiero m\xE1s informaci\xF3n acerca del producto ${n.name}. Gracias!`,target:"_blank",rel:"noopener noreferrer",children:["Consultar stock ",p(rh,{})]}),C("a",{href:"mailto:info@miltex.com.ar?subject=Pedido Desde La Web&body=Aqu\xED abajo detalle su pedido indicando NOMBRE DEL PRODUCTO Y CANTIDAD POR TALLE Y COLORES. Se ruega hacerlo de la manera m\xE1s prolija posible para evitar malos entendidos. Nuestro equipo se pondr\xE1 en contacto con usted para indicar precios y stock antes de confirmar el pedido. Muchas gracias!",target:"_blank",rel:"noopener noreferrer",children:["Realizar pedido ",p(nh,{})]})]})]})]})})}const hv=Te.div`
     width: 100%;
     height: max-content;
     padding: 120px 20px 60px 20px;
