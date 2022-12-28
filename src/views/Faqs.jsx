@@ -65,7 +65,7 @@ const StyledFaqs = styled.div`
     a.not__found__question {
         width: 100%;
         height: 54px;
-        margin-top: 40px;
+        margin-top: 50px;
         padding: 0 20px;
 
         display: flex;
@@ -109,7 +109,7 @@ const StyledFaqs = styled.div`
 
         a.not__found__question {
             width: max-content;
-            margin-top: 20px;
+            margin-top: 30px;
             padding: 0 28px;
         }
     }

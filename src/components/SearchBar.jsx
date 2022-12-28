@@ -121,17 +121,18 @@ const StyledSearchBar = styled.form`
 
             img {
                 width: 100%;
-                height: 120px;
+                height: 180px;
 
                 object-fit: cover;
+                image-rendering: optimizeQuality;
             }
 
             h4 {
                 margin-top: 4px;
 
                 color: black;
-                font-size: 14px;
-                line-height: 24px;
+                font-size: 16px;
+                line-height: 26px;
                 font-weight: 400;
             }
         }
