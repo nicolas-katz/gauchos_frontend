@@ -528,8 +528,7 @@ Error generating stack: `+o.message+`
 
     div.filter__body {
         width: 100%;
-        margin-top: 40px;
-        margin-bottom: 20px;
+        margin: 40px 0;
 
         display: flex;
         flex-direction: column;
@@ -1805,7 +1804,7 @@ Error generating stack: `+o.message+`
     @media only screen and (min-width: 1200px) {
         padding: 10px 120px;
     }
-`;function Cv(){const e=()=>{document.querySelector("header").classList.add("menu__active")},t=()=>{document.querySelector("header").classList.remove("menu__active")},{showSearchBar:n,showSearch:r}=O.exports.useContext(hn);return P(_v,{children:[P("nav",{children:[p(H,{to:"/",children:p("img",{src:rh,alt:"Miltex Indumentaria"})}),P("ul",{children:[p(H,{to:"/coleccion",onClick:t,children:p("li",{children:"Colecci\xF3n"})}),p(H,{to:"/galeria",onClick:t,children:p("li",{children:"Galer\xEDa"})}),p(H,{to:"/empresa",onClick:t,children:p("li",{children:"Empresa"})}),p(H,{to:"/contacto",onClick:t,children:p("li",{children:"Contacto"})})]}),p(tv,{onClick:e,className:"open__menu"}),p(th,{onClick:t,className:"close__menu"})]}),p(gu,{onClick:()=>{n(!0)},className:"search__icon"}),r&&p(kv,{})]})}const Ev="/gauchos_frontend/assets/meli.29168b4a.png",Pv=Te.footer`
+`;function Cv(){const e=()=>{document.querySelector("header").classList.add("menu__active")},t=()=>{document.querySelector("header").classList.remove("menu__active")},{showSearchBar:n,showSearch:r}=O.exports.useContext(hn);return P(_v,{children:[P("nav",{children:[p(H,{to:"/",children:p("img",{src:rh,alt:"Miltex Indumentaria"})}),P("ul",{children:[p(H,{to:"/coleccion",onClick:t,children:p("li",{children:"Colecci\xF3n"})}),p(H,{to:"/galeria",onClick:t,children:p("li",{children:"Galer\xEDa"})}),p(H,{to:"/empresa",onClick:t,children:p("li",{children:"Empresa"})}),p(H,{to:"/faqs",onClick:t,children:p("li",{children:"FAQ's"})}),p(H,{to:"/contacto",onClick:t,children:p("li",{children:"Contacto"})})]}),p(tv,{onClick:e,className:"open__menu"}),p(th,{onClick:t,className:"close__menu"})]}),p(gu,{onClick:()=>{n(!0)},className:"search__icon"}),r&&p(kv,{})]})}const Ev="/gauchos_frontend/assets/meli.29168b4a.png",Pv=Te.footer`
     width: 100%;
     height: max-content;
 
@@ -2109,7 +2108,7 @@ Error generating stack: `+o.message+`
 
     div.faqs__container {
         width: 100%;
-        margin-top: 40px;
+        margin-top: 60px;
 
         display: flex;
         flex-direction: row;
@@ -2122,7 +2121,7 @@ Error generating stack: `+o.message+`
             margin-bottom: 40px;
             padding-bottom: 40px;
 
-            border-bottom: 1px solid var(--colorPrincipal);
+            border-bottom: 1px solid gainsboro;
 
             &:last-child {
                 margin-bottom: 0;
@@ -2132,18 +2131,18 @@ Error generating stack: `+o.message+`
             }
 
             h4 {
-                color: var(--colorPrincipal);
-                font-size: 28px;
-                line-height: 38px;
+                color: black;
+                font-size: 32px;
+                line-height: 42px;
                 font-weight: 400;
             }
 
             p {
                 margin-top: 16px;
 
-                color: black;
-                font-size: 18px;
-                line-height: 28px;
+                color: gray;
+                font-size: 20px;
+                line-height: 30px;
                 font-weight: 300;
             }
         }
