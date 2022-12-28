@@ -74,7 +74,7 @@ const StyledInformation = styled.div`
         justify-content: center;
 
         span {
-            margin-bottom: 24px;
+            margin-bottom: 32px;
 
             &:last-child {
                 margin-bottom: 0;
@@ -107,8 +107,8 @@ const StyledInformation = styled.div`
                 margin-top: 10px;
 
                 color: gray;
-                font-size: 18px;
-                line-height: 28px;
+                font-size: 20px;
+                line-height: 30px;
                 font-weight: 300;
             }
         }

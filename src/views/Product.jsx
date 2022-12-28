@@ -188,11 +188,13 @@ export default function Product() {
                             >
                                 Consultar stock <BsWhatsapp />
                             </a>
-                            <NavLink 
-                                to='/contacto'
+                            <a 
+                                href='mailto:info@miltex.com.ar?subject=Pedido Desde La Web&body=Aquí abajo detalle su pedido indicando NOMBRE DEL PRODUCTO Y CANTIDAD POR TALLE Y COLORES. Se ruega hacerlo de la manera más prolija posible para evitar malos entendidos. Nuestro equipo se pondrá en contacto con usted para indicar precios y stock antes de confirmar el pedido. Muchas gracias!'
+                                target='_blank' 
+                                rel='noopener noreferrer'
                             >
                                 Realizar pedido <BsCart />
-                            </NavLink>
+                            </a>
                         </div>
                     </div>
                 </div>
