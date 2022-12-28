@@ -129,7 +129,7 @@ export default function Faqs() {
                     <p>Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis aliquam faucibus purus in massa tempor nec feugiat nisl</p>
                 </div>
                 <div className='faqs__box'>
-                    <h4>¿Dónde está la tienda fisica? ¿Tengo que retirar mi pedido allí o tienen envíos?</h4>
+                    <h4>¿Tienen sistema de envíos?</h4>
                     <p>Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis aliquam faucibus purus in massa tempor nec feugiat nisl</p>
                 </div>
                 <div className='faqs__box'>

@@ -309,7 +309,7 @@ export default function Contact() {
                 </div>
             </div>
             <div className='contact__form'>
-                <h3>Obtene tus productos en <span>Miltex Indumentaria.</span></h3>
+                <h3>Obtene tus productos <span>en Miltex Indumentaria.</span></h3>
                 <form>
                     <div className='input__row'>
                         <label htmlFor='name'>Tu nombre</label>
