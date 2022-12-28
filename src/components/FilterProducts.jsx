@@ -46,8 +46,7 @@ const StyledFilters = styled.div`
 
     div.filter__body {
         width: 100%;
-        margin-top: 40px;
-        margin-bottom: 20px;
+        margin: 40px 0;
 
         display: flex;
         flex-direction: column;

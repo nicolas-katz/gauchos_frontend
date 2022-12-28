@@ -178,6 +178,7 @@ export default function Header() {
                     <NavLink to='/coleccion' onClick={handleCloseMenu}><li>Colección</li></NavLink>
                     <NavLink to='/galeria' onClick={handleCloseMenu}><li>Galería</li></NavLink>
                     <NavLink to='/empresa' onClick={handleCloseMenu}><li>Empresa</li></NavLink>
+                    <NavLink to='/faqs' onClick={handleCloseMenu}><li>FAQ's</li></NavLink>
                     <NavLink to='/contacto' onClick={handleCloseMenu}><li>Contacto</li></NavLink>
                 </ul>
                 <HiMenu onClick={handleOpenMenu} className='open__menu' />

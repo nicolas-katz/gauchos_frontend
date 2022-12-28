@@ -22,7 +22,7 @@ const StyledFaqs = styled.div`
 
     div.faqs__container {
         width: 100%;
-        margin-top: 40px;
+        margin-top: 60px;
 
         display: flex;
         flex-direction: row;
@@ -35,7 +35,7 @@ const StyledFaqs = styled.div`
             margin-bottom: 40px;
             padding-bottom: 40px;
 
-            border-bottom: 1px solid var(--colorPrincipal);
+            border-bottom: 1px solid gainsboro;
 
             &:last-child {
                 margin-bottom: 0;
@@ -45,18 +45,18 @@ const StyledFaqs = styled.div`
             }
 
             h4 {
-                color: var(--colorPrincipal);
-                font-size: 28px;
-                line-height: 38px;
+                color: black;
+                font-size: 32px;
+                line-height: 42px;
                 font-weight: 400;
             }
 
             p {
                 margin-top: 16px;
 
-                color: black;
-                font-size: 18px;
-                line-height: 28px;
+                color: gray;
+                font-size: 20px;
+                line-height: 30px;
                 font-weight: 300;
             }
         }
