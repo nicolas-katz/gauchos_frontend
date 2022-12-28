@@ -23,6 +23,8 @@ const StyledFilters = styled.div`
     background-color: #1F1F1F;
 
     div.filter__header {
+        position: relative;
+        
         width: 100%;
 
         display: flex;
@@ -31,6 +33,10 @@ const StyledFilters = styled.div`
         justify-content: flex-end;
 
         svg {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+
             cursor: pointer;
 
             color: white;
@@ -40,18 +46,23 @@ const StyledFilters = styled.div`
 
     div.filter__body {
         width: 100%;
-        margin-top: 60px;
+        margin-top: 40px;
+        margin-bottom: 20px;
 
         display: flex;
         flex-direction: column;
 
         div {
+            width: 100%;
             margin: 10px 0;
 
             form {
+                width: 100%;
+
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                justify-content: space-between;
 
                 span {
                     display: flex;
@@ -221,7 +232,7 @@ export default function FilterProducts({ state, state2, products }) {
                 </div>
                 <div>
                     <h4>Buscar por colección</h4>
-                    <NavLink to='/coleccion' onClick={handleClose}>Todos las colecciones</NavLink>
+                    <NavLink to='/coleccion' onClick={handleClose}>Todas las colecciones</NavLink>
                     <NavLink to='/coleccion/verano' onClick={handleClose}>Verano</NavLink>
                     <NavLink to='/coleccion/invierno' onClick={handleClose}>Invierno</NavLink>
                     <NavLink to='/coleccion/dama' onClick={handleClose}>Dama</NavLink>
@@ -229,7 +240,7 @@ export default function FilterProducts({ state, state2, products }) {
                 </div>
                 <div>
                     <h4>Buscar por categoría</h4>
-                    <NavLink to='/coleccion' onClick={handleClose}>Todos los productos</NavLink>
+                    <NavLink to='/coleccion' onClick={handleClose}>Todas las categorías</NavLink>
                     <NavLink to='/coleccion/alpargatas' onClick={handleClose}>Alpargatas</NavLink>
                     <NavLink to='/coleccion/bermudas' onClick={handleClose}>Bermudas</NavLink>
                     <NavLink to='/coleccion/bombachas' onClick={handleClose}>Bombachas</NavLink>
@@ -240,8 +251,8 @@ export default function FilterProducts({ state, state2, products }) {
                 </div>
                 <div>
                     <h4>Ordenar por</h4>
-                    <button onClick={() => handleSort(1)}>Aa - Zz</button>
-                    <button onClick={() => handleSort(-1)}>Zz - Aa</button>
+                    <button onClick={() => handleSort(1)}>Menor a Mayor</button>
+                    <button onClick={() => handleSort(-1)}>Mayor a Menor</button>
                 </div>
             </div>
         </StyledFilters>

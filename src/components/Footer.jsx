@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { BsInstagram, FaFacebookF, AiOutlineMail } from 'react-icons/all';
+import { BsInstagram, FaFacebookF } from 'react-icons/all';
 import logo from '../assets/logo.png';
 import meli from '../assets/meli.png';
 
@@ -276,20 +276,23 @@ export default function Footer() {
                     <div>
                         <h4>Productos</h4>
                         <NavLink to='/coleccion'>Colección</NavLink>
-                        <a href='/' target='_blank' rel='noopener noreferrer'>Descargar catalogo</a>
-                        <NavLink to='/contacto'>Realizar pedido</NavLink>
+                        <NavLink to='/coleccion/verano'>Verano</NavLink>
+                        <NavLink to='/coleccion/invierno'>Invierno</NavLink>
+                        <NavLink to='/galeria'>Galería</NavLink>
                     </div>
                     <div>
                         <h4>Nosotros</h4>
                         <NavLink to='/empresa'>Empresa</NavLink>
-                        <NavLink to='/galeria'>Galería</NavLink>
+                        <a href='https://www.instagram.com/akamasoa_argentina/?hl=es-la' target='_blank' rel='noopener noreferrer'>Akamasoa</a>
+                        <NavLink to='/faqs'>FAQ's</NavLink>
                         <NavLink to='/contacto'>Contacto</NavLink>
                     </div>
                     <div>
-                        <h4>Telefonos</h4>
-                        <a href='tel:+5491162715898' target='_blank' rel='noopener noreferrer'>Mayorista</a>
-                        <a href='tel:+5491125610827' target='_blank' rel='noopener noreferrer'>Minorista</a>
-                        <a href='tel:+541148545800' target='_blank' rel='noopener noreferrer'>Rotativas</a>
+                        <h4>Contacto</h4>
+                        <a href='tel:+5491162715898' target='_blank' rel='noopener noreferrer'>Tel. Mayorista</a>
+                        <a href='tel:+5491125610827' target='_blank' rel='noopener noreferrer'>Tel. Minorista</a>
+                        <a href='tel:+541148545800' target='_blank' rel='noopener noreferrer'>Tel. Rotativas</a>
+                        <a href='mailto:info@miltex.com.ar' target='_blank' rel='noopener noreferrer'>Email</a>
                     </div>
                 </div>
                 <div className='footer__media'>
@@ -297,7 +300,6 @@ export default function Footer() {
                     <div>
                         <a href='https://www.instagram.com/gauchotiendaoficial/?hl=es-la' target='_blank' rel='noopener noreferrer'><BsInstagram /></a>
                         <a href='https://www.facebook.com/profile.php?id=100064187136448' target='_blank' rel='noopener noreferrer'><FaFacebookF /></a>
-                        <a href='mailto:info@miltex.com.ar' target='_blank' rel='noopener noreferrer'><AiOutlineMail /></a>
                     </div>
                     <h4>Compra online</h4>
                     <a className='meli' href='https://listado.mercadolibre.com.ar/_CustId_220794390' target='_blank' rel='noopener noreferrer'>

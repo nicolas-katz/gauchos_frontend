@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
-import foto from '../assets/galeria_ejemplo.jpg';
 import { ProductsContext } from '../context/ProductsContext';
 
 const StyledGallery = styled.div`

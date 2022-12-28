@@ -81,7 +81,7 @@ const StyledColection = styled.div`
         a {
             width: 48%;
             height: max-content;
-            margin: 10px 0;
+            margin: 14px 0;
 
             display: flex;
             flex-direction: column;
@@ -90,20 +90,55 @@ const StyledColection = styled.div`
 
             img {
                 width: 100%;
-                height: 180px;
+                height: 240px;
 
                 border-radius: 2px;
 
                 object-fit: cover;
+                image-rendering: optimizeQuality;
+            }
+
+            h5 {
+                margin-top: 10px;
+
+                color: gray;
+                font-size: 10px;
+                line-height: 20px;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 2px;
             }
 
             h4 {
-                margin-top: 10px;
+                margin-top: 2px;
                 
                 color: black;
                 font-size: 18px;
                 line-height: 28px;
                 font-weight: 400;
+            }
+
+            span {
+                margin-top: 2px;
+
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+
+                label {
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 6px;
+
+                    background-color: red;
+                    border: 2px solid gainsboro;
+                    border-radius: 50%;
+
+                    &:last-child {
+                        background-color: blue;
+                    }
+                }
             }
         }
     }
@@ -168,7 +203,12 @@ export default function Colection() {
                                     src={product.image} 
                                     alt={product.name} 
                                 />
+                                <h5>Colección</h5>
                                 <h4>{product.name}</h4>
+                                <span>
+                                    <label></label>
+                                    <label></label>
+                                </span>
                             </NavLink>
                         )
                     })

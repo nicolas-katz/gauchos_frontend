@@ -33,8 +33,8 @@ const StyledContact = styled.div`
                 margin-bottom: 14px;
 
                 color: black;
-                font-size: 36px;
-                line-height: 46px;
+                font-size: 32px;
+                line-height: 42px;
                 font-weight: 400;
             }
 
@@ -85,41 +85,35 @@ const StyledContact = styled.div`
         }
 
         div.contact__map {
-            position: relative;
-
             width: 100%;
-            height: 480px;
+            height: max-content;
 
             display: flex;
             flex-direction: column;
 
             iframe {
                 width: 100%;
-                height: 100%;
+                height: 320px;
 
                 border: none;
                 border-radius: 2px;
             }
 
             h4 {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                z-index: 1;
-
                 width: 100%;
-                height: max-content;
-                padding: 28px;
+                margin-top: 28px;
 
-                background-color: var(--colorPrincipal);
-
-                color: white;
+                color: gray;
                 font-size: 18px;
                 line-height: 28px;
-                font-weight: 400;
+                font-weight: 300;
 
                 span {
                     display: block;
+
+                    color: black;
+                    font-size: 24px;
+                    line-height: 34px;
                 }
             }
         }
@@ -235,13 +229,13 @@ const StyledContact = styled.div`
                 margin: 0;
 
                 h2 {
-                    font-size: 42px;
-                    line-height: 52px;
+                    font-size: 36px;
+                    line-height: 46px;
                 }
             }
 
-            div.contact__map {
-                height: 520px;
+            div.contact__map iframe {
+                height: 420px;
             }
         }
 
@@ -252,7 +246,7 @@ const StyledContact = styled.div`
             }
             
             form {
-                div.input__name {
+                div.input__row {
                     width: 49%;
                 }
             }
@@ -270,8 +264,8 @@ const StyledContact = styled.div`
 
             div.contact__description {
                 h2 {
-                    font-size: 48px;
-                    line-height: 58px;
+                    font-size: 42px;
+                    line-height: 52px;
                 }
             }
         }
@@ -296,8 +290,8 @@ export default function Contact() {
         <StyledContact>
             <div className='contact__information'>
                 <div className='contact__description'>
-                    <h2>Interested in working together? Contact!</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate odio ipsa provident ducimus tenetur quos architecto voluptatibus inventore similique, hic sunt nisi officia eaque alias magni minima recusandae nobis quia.</p>
+                    <h2>Interesado en nuestros productos? Contactanos!</h2>
+                    <p>Si te interesa vender nuestros productos, no dudes en pedirnos el catálogo y la lista de precios mayoristas por WhatsApp. Estamos para asesorarte!</p>
                     <div className='contact__data'>
                         <h5>Email <a href='mailto:info@miltex.com.ar'>info@miltex.com.ar</a></h5>
                         <h5>Mayorista <a href='tel:+5491162715898'>+54 (11) 62715898</a></h5>
@@ -311,23 +305,27 @@ export default function Contact() {
                         loading="lazy" 
                         referrerPolicy="no-referrer-when-downgrade">
                     </iframe>
-                    <h4>Lunes a Viernes de 8hs a 18hs. <span>Sabados de 8hs a 13hs.</span></h4>
+                    <h4><span>Horarios de atención</span>Lunes a Viernes de 8hs a 18hs y Sabados de 8hs a 13hs.</h4>
                 </div>
             </div>
             <div className='contact__form'>
-                <h3>Let's make something big. <span>Together.</span></h3>
+                <h3>Obtene tus productos en <span>Miltex Indumentaria.</span></h3>
                 <form>
-                    <div className='input__name'>
+                    <div className='input__row'>
                         <label htmlFor='name'>Tu nombre</label>
                         <input type='text' name='name' id='name' minLength='4' maxLength='40' placeholder='Tu nombre' required />
                     </div>
-                    <div className='input__name'>
+                    <div className='input__row'>
                         <label htmlFor='company'>Tu empresa</label>
                         <input type='text' name='company' id='company' minLength='4' maxLength='40' placeholder='Tu empresa' required />
                     </div>
-                    <div>
+                    <div className='input__row'>
                         <label htmlFor='name'>Tu email</label>
                         <input type='email' name='email' id='email' minLength='4' maxLength='40' placeholder='Tu email' required />
+                    </div>
+                    <div className='input__row'>
+                        <label htmlFor='name'>Tu asunto</label>
+                        <input type='text' name='issue' id='issue' minLength='4' maxLength='40' placeholder='Tu asunto' required />
                     </div>
                     <div>
                         <label htmlFor='message'>Tu mensaje</label>

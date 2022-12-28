@@ -14,6 +14,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsappButton from './components/WhatsappButton';
 import SearchBar from './components/SearchBar';
+import Faqs from './views/Faqs';
 
 export default function App() {
     return (
@@ -26,6 +27,7 @@ export default function App() {
             <Route path='/coleccion/producto/:id' element={<Product />} />
             <Route path='/galeria' element={<Gallery />} />
             <Route path='/empresa' element={<About />} />
+            <Route path='/faqs' element={<Faqs />} />
             <Route path='/contacto' element={<Contact />} />
             <Route path='/acceso/login' element={<Login />} />
             <Route path='/acceso/administrador' element={<Admin />} />

@@ -11,39 +11,28 @@ const StyledLogin = styled.div`
     align-items: center;
     justify-content: center;
 
-    background-color: white;
-
-    h6 {
-        color: var(--colorPrincipal);
-        font-size: 12px;
-        line-height: 22px;
-        font-weight: 500;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-
-    h1 {
-        margin-top: 20px;
-
-        color: black;
-        font-size: 36px;
-        line-height: 46px;
-        font-weight: 400;
-        text-align: center;
-    }
+    background-color: whitesmoke;
 
     form {
         width: 100%;
         height: max-content;
-        margin-top: 60px;
-        padding: 32px;
+        padding: 40px;
 
         display: flex;
         flex-direction: column;
 
-        background-color: ghostwhite;
+        background-color: white;
         border-radius: 2px;
+
+        h1 {
+            margin-bottom: 40px;
+
+            color: black;
+            font-size: 28px;
+            line-height: 38px;
+            font-weight: 400;
+            text-align: center;
+        }
 
         label {
             color: black;
@@ -55,7 +44,7 @@ const StyledLogin = styled.div`
         button {
             width: 100%;
             height: 54px;
-            margin: 20px 0;
+            margin: 10px 0 20px 0;
             padding: 0 20px;
 
             background-color: white;
@@ -82,7 +71,7 @@ const StyledLogin = styled.div`
         }
 
         button {
-            width: max-content;
+            width: 100%;
             padding: 0 28px;
 
             background-color: var(--colorPrincipal);
@@ -95,7 +84,7 @@ const StyledLogin = styled.div`
         }
 
         h5 {
-            margin-top: 14px;
+            margin-top: 8px;
 
             cursor: pointer;
             transition: all .6s;
@@ -104,6 +93,7 @@ const StyledLogin = styled.div`
             font-size: 16px;
             line-height: 26px;
             font-weight: 400;
+            text-align: center;
 
             &:hover {
                 color: var(--colorPrincipal);
@@ -114,13 +104,13 @@ const StyledLogin = styled.div`
     @media only screen and (min-width: 768px) {
         padding: 160px 100px 100px 100px;
 
-        h1 {
-            font-size: 48px;
-            line-height: 58px;
-        }
-
         form {
             padding: 60px;
+
+            h1 {
+                font-size: 36px;
+                line-height: 46px;
+            }
 
             div {
                 flex-direction: row;
@@ -128,8 +118,14 @@ const StyledLogin = styled.div`
                 justify-content: space-between;
 
                 h5 {
-                    margin-top: 0;
+                    margin-top: -6px;
+
+                    text-align: left;
                 }
+            }
+
+            button {
+                width: max-content;
             }
         }
     }
@@ -139,6 +135,11 @@ const StyledLogin = styled.div`
 
         form {
             width: 60%;
+
+            h1 {
+                font-size: 42px;
+                line-height: 52px;
+            }
         }
     }
 `;
@@ -146,9 +147,8 @@ const StyledLogin = styled.div`
 export default function Login() {
     return (
         <StyledLogin>
-            <h6>Miltex Indumentaria</h6>
-            <h1>Acceso de administrador</h1>
             <form>
+                <h1>Cuenta de Administrador</h1>
                 <label htmlFor='email'>Tu email</label>
                 <input type='email' name='email' id='email' minLength='4' maxLength='40' placeholder='Tu email' required />
                 <label htmlFor='password'>Tu contraseña</label>
