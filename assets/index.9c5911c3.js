@@ -692,9 +692,9 @@ Error generating stack: `+o.message+`
                 width: max-content;
                 margin-top: 8px;
                 margin-bottom: 0;
-                padding-bottom: 2px;
+                padding: 10px;
 
-                border-bottom: 1px solid black;
+                border: 2px solid black !important;
 
                 color: black;
                 font-size: 14px;
