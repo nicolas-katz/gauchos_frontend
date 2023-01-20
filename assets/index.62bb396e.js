@@ -390,7 +390,7 @@ Error generating stack: `+o.message+`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 20;
 
     width: 100%;
     height: 100vh;
@@ -399,9 +399,9 @@ Error generating stack: `+o.message+`
     display: flex;
     flex-direction: column;
 
-    overflow-y: scroll;
+    overflow-y: auto;
 
-    background-color: #1F1F1F;
+    background-color: black;
 
     div.filter__header {
         position: relative;
@@ -413,15 +413,26 @@ Error generating stack: `+o.message+`
         align-items: center;
         justify-content: flex-end;
 
-        svg {
+        span {
             position: fixed;
             top: 20px;
             right: 20px;
 
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 2px solid white;
+            border-radius: 50%;
             cursor: pointer;
 
-            color: white;
-            font-size: 18px;
+            svg {
+                color: white;
+                font-size: 20px;
+            }
         }
     }
 
@@ -470,7 +481,7 @@ Error generating stack: `+o.message+`
 
                         color: white;
                         font-size: 14px;
-                        font-weight: 300;
+                        font-weight: 400;
                         text-transform: uppercase;
                         letter-spacing: 2px;
 
@@ -482,8 +493,8 @@ Error generating stack: `+o.message+`
 
                 button {
                     width: max-content;
-                    height: 42px;
-                    padding: 0 20px;
+                    height: 64px;
+                    padding: 0 28px;
 
                     display: flex;
                     align-items: center;
@@ -491,14 +502,14 @@ Error generating stack: `+o.message+`
 
                     background-color: var(--colorPrincipal);
                     border: none;
-                    border-radius: 2px;
+                    border-radius: 40px;
                     outline: none;
                     cursor: pointer;
                     transition: all .6s;
 
                     color: white;
                     font-size: 14px;
-                    font-weight: 400;
+                    font-weight: 500;
                     text-transform: uppercase;
                     letter-spacing: 2px;
                 }
@@ -508,9 +519,11 @@ Error generating stack: `+o.message+`
                 margin-bottom: 8px;
 
                 color: var(--colorPrincipal);
-                font-size: 18px;
-                line-height: 28px;
-                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 2px;
             }
 
             a {
@@ -520,8 +533,8 @@ Error generating stack: `+o.message+`
                 display: block;
 
                 color: white;
-                font-size: 16px;
-                line-height: 26px;
+                font-size: 18px;
+                line-height: 28px;
                 font-weight: 300;
                 text-decoration: none;
             }
@@ -555,7 +568,19 @@ Error generating stack: `+o.message+`
             }
         }
     }
-`;function dv({state:e,state2:t,products:n}){const{showFilterBar:r,searchByName:i,searchByCategory:o,searchByColection:l,sortProducts:a}=O.exports.useContext(On),[s,u]=O.exports.useState(""),d=()=>{r(!1)},h=y=>{u(y.target.value)},g=y=>{y.preventDefault(),i(s,e),d(),t(`Resultado para busqueda: ${s}`)},x=y=>{a(n,y),d()};return P(cv,{children:[p("div",{className:"filter__header",children:p(ev,{onClick:d})}),P("div",{className:"filter__body",children:[P("div",{children:[p("h4",{children:"Buscar por nombre"}),P("form",{onSubmit:g,children:[P("span",{children:[p(gu,{}),p("input",{onChange:h,type:"text",name:"search",id:"search",minLength:"1",placeholder:"Buscar nombre",value:s,required:!0})]}),p("button",{type:"submit",children:"Buscar"})]})]}),P("div",{children:[p("h4",{children:"Buscar por colecci\xF3n"}),p(B,{to:"/coleccion",onClick:d,children:"Todas las colecciones"}),p(B,{to:"/coleccion/verano",onClick:d,children:"Verano"}),p(B,{to:"/coleccion/invierno",onClick:d,children:"Invierno"}),p(B,{to:"/coleccion/dama",onClick:d,children:"Dama"}),p(B,{to:"/coleccion/seguridad",onClick:d,children:"Trabajo y Seguridad Industrial"})]}),P("div",{children:[p("h4",{children:"Buscar por categor\xEDa"}),p(B,{to:"/coleccion",onClick:d,children:"Todas las categor\xEDas"}),p(B,{to:"/coleccion/alpargatas",onClick:d,children:"Alpargatas"}),p(B,{to:"/coleccion/bermudas",onClick:d,children:"Bermudas"}),p(B,{to:"/coleccion/bombachas",onClick:d,children:"Bombachas"}),p(B,{to:"/coleccion/calzado",onClick:d,children:"Calzado de Trabajo"}),p(B,{to:"/coleccion/camisas",onClick:d,children:"Camisas"}),p(B,{to:"/coleccion/pantalones",onClick:d,children:"Pantalones"}),p(B,{to:"/coleccion/cargos",onClick:d,children:"Pantalones Cargo"})]}),P("div",{children:[p("h4",{children:"Ordenar por"}),p("button",{onClick:()=>x(1),children:"Nombre (A - Z)"}),p("button",{onClick:()=>x(-1),children:"Nombre (Z - A)"})]})]})]})}const fv=Te.div`
+
+    @media only screen and (min-width: 768px) {
+        width: 50%;
+
+        div.filter__header {        
+            span {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+`;function dv({state:e,state2:t,products:n}){const{showFilterBar:r,searchByName:i,searchByCategory:o,searchByColection:l,sortProducts:a}=O.exports.useContext(On),[s,u]=O.exports.useState(""),d=()=>{r(!1)},h=y=>{u(y.target.value)},g=y=>{y.preventDefault(),i(s,e),d(),t(`Resultado para busqueda: ${s}`)},x=y=>{a(n,y),d()};return P(cv,{children:[p("div",{className:"filter__header",children:p("span",{onClick:d,children:p(ev,{})})}),P("div",{className:"filter__body",children:[P("div",{children:[p("h4",{children:"Buscar por nombre"}),P("form",{onSubmit:g,children:[P("span",{children:[p(gu,{}),p("input",{onChange:h,type:"text",name:"search",id:"search",minLength:"1",placeholder:"Buscar nombre",value:s,required:!0})]}),p("button",{type:"submit",children:"Buscar"})]})]}),P("div",{children:[p("h4",{children:"Buscar por colecci\xF3n"}),p(B,{to:"/coleccion",onClick:d,children:"Todas las colecciones"}),p(B,{to:"/coleccion/verano",onClick:d,children:"Verano"}),p(B,{to:"/coleccion/invierno",onClick:d,children:"Invierno"}),p(B,{to:"/coleccion/dama",onClick:d,children:"Dama"}),p(B,{to:"/coleccion/seguridad",onClick:d,children:"Trabajo y Seguridad Industrial"})]}),P("div",{children:[p("h4",{children:"Buscar por categor\xEDa"}),p(B,{to:"/coleccion",onClick:d,children:"Todas las categor\xEDas"}),p(B,{to:"/coleccion/alpargatas",onClick:d,children:"Alpargatas"}),p(B,{to:"/coleccion/bermudas",onClick:d,children:"Bermudas"}),p(B,{to:"/coleccion/bombachas",onClick:d,children:"Bombachas"}),p(B,{to:"/coleccion/calzado",onClick:d,children:"Calzado de Trabajo"}),p(B,{to:"/coleccion/camisas",onClick:d,children:"Camisas"}),p(B,{to:"/coleccion/pantalones",onClick:d,children:"Pantalones"}),p(B,{to:"/coleccion/cargos",onClick:d,children:"Pantalones Cargo"})]}),P("div",{children:[p("h4",{children:"Ordenar por"}),p("button",{onClick:()=>x(1),children:"Nombre (A - Z)"}),p("button",{onClick:()=>x(-1),children:"Nombre (Z - A)"})]})]})]})}const fv=Te.div`
     width: 100%;
     height: max-content;
     padding: 40px 20px;
@@ -710,27 +735,12 @@ Error generating stack: `+o.message+`
     @media only screen and (min-width: 768px) {
         div.colection__filters {
             margin-top: 20px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-
-            button.filter__button {
-                width: max-content;
-                padding: 0 36px;
-            }
         }
 
         div.colection__container {
             a {
-                width: 48%;
+                width: 31%;
                 margin: 20px 0;
-
-                img {
-                    height: 420px;
-
-                    object-fit: cover;
-                }
             }
         }    
     }
@@ -738,11 +748,7 @@ Error generating stack: `+o.message+`
     @media only screen and (min-width: 1024px) {
         div.colection__container {
             a {
-                width: 32%;
-
-                img {
-                    height: 480px;
-                }
+                width: 24%;
             }
         }    
     }
@@ -1968,7 +1974,7 @@ Error generating stack: `+o.message+`
 
         text-align: center;
     }
-`;function Ov(){return P(vp,{children:[P(zv,{children:[P("div",{className:"footer__container__one",children:[P("div",{className:"footer__brand",children:[p(B,{to:"/",children:p("img",{src:oh,alt:"Miltex Indumentaria"})}),p("h4",{children:"Somos Miltex SA., fabricantes directos de Gaucho Indumentaria."})]}),P("div",{className:"footer__links",children:[P("div",{children:[p("h5",{children:"Navegaci\xF3n"}),p(B,{to:"/",children:"Inicio"}),p(B,{to:"/coleccion",children:"Colecci\xF3n"}),p(B,{to:"/empresa",children:"Empresa"}),p(B,{to:"/faq",children:"FAQ"}),p(B,{to:"/contacto",children:"Contacto"})]}),P("div",{children:[p("h5",{children:"Productos"}),p(B,{to:"/carrito",children:"Mi Carrito"}),p(B,{to:"/carrito",children:"C\xF3mo Comprar"}),p(B,{to:"/carrito",children:"Compra Mayorista"}),p(B,{to:"/carrito",children:"Boton de Arrepentimiento"}),p(B,{to:"/carrito",children:"Comprar en Mercado Libre"}),p(B,{to:"/carrito",children:"Descargar Catalogo"})]})]})]}),P("div",{className:"footer__suscribe",children:[p("h5",{children:"Suscribite ahora"}),p("p",{children:"Enterate de todas nuestras novedades."}),P("div",{className:"suscribe",children:[p("input",{type:"email",name:"email",id:"email",placeholder:"Ingresa Tu Email",minLength:"4",maxLength:"40",requiered:!0}),p("button",{children:"Suscribir"})]}),P("div",{className:"media",children:[p("a",{children:p(nv,{})}),p("a",{children:p(Jy,{})}),p("a",{children:p(Zy,{})})]})]})]}),p(Rv,{children:P("h6",{children:["\xA9 All rights reserved by Miltex SA. Powered by ",p("a",{children:"Nicolas Katz"}),"."]})})]})}const Tv=Te.a`
+`;function Ov(){return P(vp,{children:[P(zv,{children:[P("div",{className:"footer__container__one",children:[P("div",{className:"footer__brand",children:[p(B,{to:"/",children:p("img",{src:oh,alt:"Miltex Indumentaria"})}),p("h4",{children:"Somos Miltex SA., fabricantes directos de Gaucho Indumentaria."})]}),P("div",{className:"footer__links",children:[P("div",{children:[p("h5",{children:"Navegaci\xF3n"}),p(B,{to:"/",children:"Inicio"}),p(B,{to:"/coleccion",children:"Colecci\xF3n"}),p(B,{to:"/empresa",children:"Empresa"}),p(B,{to:"/faq",children:"FAQ"}),p(B,{to:"/contacto",children:"Contacto"})]}),P("div",{children:[p("h5",{children:"Productos"}),p(B,{to:"/carrito",children:"Mi Carrito"}),p(B,{to:"/carrito",children:"C\xF3mo Comprar"}),p(B,{to:"/carrito",children:"Compra Mayorista"}),p(B,{to:"/carrito",children:"Boton de Arrepentimiento"}),p(B,{to:"/carrito",children:"Comprar en Mercado Libre"}),p(B,{to:"/carrito",children:"Descargar Catalogo"})]})]})]}),P("div",{className:"footer__suscribe",children:[p("h5",{children:"Suscribite ahora"}),p("p",{children:"Enterate de todas nuestras novedades."}),P("div",{className:"suscribe",children:[p("input",{type:"email",name:"email",id:"email",placeholder:"Ingresa Tu Email",minLength:"4",maxLength:"40",requiered:!0}),p("button",{children:"Suscribirme"})]}),P("div",{className:"media",children:[p("a",{children:p(nv,{})}),p("a",{children:p(Jy,{})}),p("a",{children:p(Zy,{})})]})]})]}),p(Rv,{children:P("h6",{children:["\xA9 All rights reserved by Miltex SA. Powered by ",p("a",{children:"Nicolas Katz"}),"."]})})]})}const Tv=Te.a`
     position: fixed;
     right: 20px;
     bottom: 20px;
@@ -1978,8 +1984,8 @@ Error generating stack: `+o.message+`
       right: 120px;
     }
 
-    width: 54px;
-    height: 54px;
+    width: 64px;
+    height: 64px;
 
     display: flex;
     align-items: center;
@@ -1990,7 +1996,7 @@ Error generating stack: `+o.message+`
     transition: all .6s;
 
     color: white;
-    font-size: 28px;
+    font-size: 36px;
     text-decoration: none;
 
     &:hover {
